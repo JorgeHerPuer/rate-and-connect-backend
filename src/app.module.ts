@@ -6,10 +6,11 @@ import configuration from './config/config';
 
 @Module({
   imports: [
+    // define module configurations with forRoot
     ConfigModule.forRoot({
       isGlobal: true, // we import it in all modules
       envFilePath: ['.env.dev', '.env.prod'], // load env files
-      load: [configuration],
+      load: [configuration], // make database data accesible via ConfigService
     }),
   ],
   controllers: [AppController],
