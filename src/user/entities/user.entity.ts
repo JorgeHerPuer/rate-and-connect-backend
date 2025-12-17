@@ -30,7 +30,7 @@ export class User {
   status: UserStatus;
 
   @Column({ type: 'string', default: null, nullable: true })
-  profile_picture_url: string;
+  profile_picture_url: string | null;
 
   @Column({ type: 'string', default: null, nullable: true })
   location: string | null;
