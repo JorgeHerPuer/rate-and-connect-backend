@@ -4,6 +4,7 @@ import {
   DeleteDateColumn,
   Entity,
   PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 import { UserStatus } from './enums/user-status.enum';
 import { Gender } from './enums/gender-enum';
@@ -41,9 +42,12 @@ export class User {
   @Column({ type: 'enum', enum: Gender, default: null, nullable: true })
   gender: Gender | null;
 
-  @CreateDateColumn({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })
+  @CreateDateColumn({ type: 'timestamptz' })
   created_at: Date;
 
-  @DeleteDateColumn({ type: 'datetime', default: null, nullable: true })
+  @UpdateDateColumn({ type: 'timestamptz' })
+  updated_at: Date;
+
+  @DeleteDateColumn({ type: 'timestamptz', nullable: true })
   deleted_at: Date | null;
 }

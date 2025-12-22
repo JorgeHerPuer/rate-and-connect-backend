@@ -4,6 +4,7 @@ import {
   DeleteDateColumn,
   Entity,
   PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 
 @Entity()
@@ -20,9 +21,12 @@ export class Media {
   @Column({ type: 'string', default: null, nullable: true })
   cover_picture_url: string | null;
 
-  @CreateDateColumn({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })
+  @CreateDateColumn({ type: 'timestamptz' })
   created_at: Date;
 
-  @DeleteDateColumn({ type: 'datetime', default: null, nullable: true })
+  @UpdateDateColumn({ type: 'timestamptz' })
+  updated_at: Date;
+
+  @DeleteDateColumn({ type: 'timestamptz', nullable: true })
   deleted_at: Date | null;
 }
