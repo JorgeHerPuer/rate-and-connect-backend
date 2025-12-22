@@ -30,6 +30,15 @@ export default tseslint.config(
       '@typescript-eslint/no-floating-promises': 'warn',
       '@typescript-eslint/no-unsafe-argument': 'warn',
       'prettier/prettier': ['error', { endOfLine: 'auto' }],
+      'no-restricted-syntax': [
+      'error',
+      {
+        selector:
+          "Property[key.name='type'][value.value='datetime']",
+        message:
+          "'datetime' is not available in PostgreSQL. Use 'timestamp' or 'timestamptz'.",
+      },
+    ],
     },
   },
 );
