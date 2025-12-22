@@ -6,7 +6,7 @@ import {
 } from 'typeorm';
 
 export class Media {
-  @PrimaryGeneratedColumn({ unsigned: true })
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column({ type: 'text', default: null, nullable: true })
