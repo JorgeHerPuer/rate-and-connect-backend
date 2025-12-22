@@ -10,7 +10,7 @@ import { Gender } from './enums/gender-enum';
 
 @Entity()
 export class User {
-  @PrimaryGeneratedColumn({ unsigned: true })
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column({ type: 'string', length: 50 })
