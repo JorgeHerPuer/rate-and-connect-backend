@@ -24,7 +24,7 @@ export class Media {
   @CreateDateColumn({ type: 'timestamptz' })
   created_at: Date;
 
-  @UpdateDateColumn({ type: 'timestamptz' })
+  @UpdateDateColumn({ type: 'datetime' })
   updated_at: Date;
 
   @DeleteDateColumn({ type: 'timestamptz', nullable: true })
